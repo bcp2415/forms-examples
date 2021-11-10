@@ -1,25 +1,24 @@
-<!DOCTYPE html>
 <html>
-<head>
-      <title>Check input value with DOM</title>
-</head>
-<body>
-   <form>
-      <label>Language
-         <input type="text" name="language" id="language" value="JavaScript">
-      </label>
-   </form>
-   <button id="update">Update Input Value</button>
+   <head>
+      <title>Form Validation</title>
+      <style>
+         label {display: block;}
+         body {padding: 25px;}
+      </style>
+   </head>
    <script>
-      let button = document.getElementById("update");
-      // add event handler for when button clicked
-      button.addEventListener("click", function() {
-         let input = document.getElementById("language");
-         console.log(input.value);
-         // now update the value in the input
-         input.value = input.value + " rocks!";
-         console.log(input.value);
+      window.addEventListener("load", function() {
+         let form = document.querySelector("form");
+         form.addEventListener("submit", function(event) {
+            alert("submit clicked");
+         });
       });
    </script>
-</body>
+   <body>
+      <form method="POST" action="https://handlers.education.launchcode.org/request-parrot">
+         <label>Username <input type="text" name="username"></label>
+         <label>Team Name <input type="text" name="team"></label>
+         <button>Submit</button>
+      </form>
+   </body>
 </html>
