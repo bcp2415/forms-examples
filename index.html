@@ -11,7 +11,11 @@
          let form = document.querySelector("form");
          form.addEventListener("submit", function(event) {
             const usernameInput = document.querySelector("input[name=username]");
-            alert("username:  " + usernameInput.value);
+            const teamName = document.querySelector("input[name=team]");
+            if (usernameInput.value === "" || teamName.value === "") {
+              alert("All fields are required!");
+              event.preventDefault();
+            }
          });
       });
    </script>
